@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                git branch: 'main', url: 'https://github.com/GauravGote/terraform_ec2.git'
             }
         }
         //The terraform init command initializes a working directory containing configuration files and installs plugins for required providers.
@@ -20,10 +20,9 @@ pipeline {
                 sh "terraform plan"
             }
         }
-
         stage ('Apply') {
             steps {
-                sh "terraform apply"
+                sh "terraform apply --auto-approve"
                 // echo "Terraform action is --> ${action}"
                 // sh ('terraform ${action} --auto-approve') 
            }
