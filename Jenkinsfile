@@ -26,16 +26,16 @@ pipeline {
                 sh "terraform plan"
             }
         }
-        stage ('Apply') {
-            steps {
-                sh "terraform apply -auto-approve"
-                 
-           }
-        }
-        // stage ('Destroy') {
+        // stage ('Apply') {
         //     steps {
-        //         sh "terraform destroy"
-        //     }
+        //         sh "terraform apply -auto-approve"
+                 
+        //    }
         // }
+        stage ('Destroy') {
+            steps {
+                sh "terraform destroy"
+            }
+        }
     }
 }
