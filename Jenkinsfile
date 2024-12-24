@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('clean Work Space') {
+            steps {
+                cleanWs()
+            }
+        }
+
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/GauravGote/terraform-project.git'
