@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/GauravGote/terraform_ec2.git'
+                git branch: 'main', url: 'https://github.com/GauravGote/terraform-project.git'
             }
         }
         //The terraform init command initializes a working directory containing configuration files and installs plugins for required providers.
