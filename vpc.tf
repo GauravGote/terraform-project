@@ -8,14 +8,14 @@ resource "aws_vpc" "my-vpc" {
 }
 
 #Create Private Subnet
-# resource "aws_subnet" "private-subnet" {
-#     cidr_block = "10.0.1.0/24"
-#     vpc_id = aws_vpc.my-vpc.id
-#     tags = {
-#       Name = "private-subnet"
-#     }
+ resource "aws_subnet" "private-subnet" {
+    cidr_block = "10.0.1.0/24"
+     vpc_id = aws_vpc.my-vpc.id
+     tags = {
+      Name = "private-subnet"
+     }
 
-# }
+ }
 
 #Create Public Subnet
 resource "aws_subnet" "public-subnet" {
