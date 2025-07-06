@@ -13,6 +13,15 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/GauravGote/terraform-project.git'
             }
         }
+        stage('TRIVY FS SCAN') {
+            steps {
+                //sh "trivy fs . > trivyfs.txt"
+                  sh "trivy fs --format table --output trivy-report.table ."
+                //  sh "trivy image --format template --template "@/contrib/html.tpl" --output trivy-report.html ."
+                
+                
+            }
+        }
         //The terraform init command initializes a working directory containing configuration files and installs plugins for required providers.
         stage ('Initializes') {
             steps {
