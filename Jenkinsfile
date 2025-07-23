@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        // stage('clean Work Space') {
-        //     steps {
-        //         cleanWs()
-        //     }
-        // }
-
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/GauravGote/terraform-project.git'
@@ -35,12 +29,12 @@ pipeline {
                 sh "terraform plan"
             }
         }
-        // stage ('Apply') {
-        //     steps {
-        //         sh "terraform apply -auto-approve"
+        stage ('Apply') {
+            steps {
+                sh "terraform apply -auto-approve"
                  
-        //    }
-        // }
+           }
+        }
         stage ('Destroy') {
             steps {
                 sh "terraform destroy"
