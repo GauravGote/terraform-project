@@ -5,12 +5,12 @@ variable "aws_region" {
 
 variable "access_key" {
   description = " SSH keys to connect to ec2 instance"
-  default     = "AKIAU6GD3F6IMEZVGPH3"
+  default     = "Access key"
 }
 
 variable "secret_key" {
   description = " SSH keys to connect to ec2 instance"
-  default     = "ZK95tH9dkVmvTdnRpZ44DiuwQGLagx6Xhv04Zz4v"
+  default     = "Secret key"
 }
 
 variable "instance_type" {
